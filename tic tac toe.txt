@@ -1,0 +1,152 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    char k1='1';
+    char k2='2';
+    char k3='3';
+    char k4='4';
+    char k5='5';
+    char k6='6';
+    char k7='7';
+    char k8='8';
+    char k9='9';
+
+
+
+        char a1='1';
+        char a2='2';
+        char a3='3';
+        char a4='4';
+        char a5='5';
+        char a6='6';
+        char a7='7';
+        char a8='8';
+        char a9='9';
+
+
+    int i,kutu,b;//Her bir kutu için ayrı bir deger atadım
+
+     printf("\n\n Tic Tac Toe\n\n");//Tablo oluşturma
+    printf("Oyuncu1 (X)  -  Oyuncu2 (O)\n\n\n");
+
+    printf(" %c || %c || %c\n",k1,k2,k3);
+    printf(" %c || %c || %c\n",k4,k5,k6);
+    printf(" %c || %c || %c\n",k7,k8,k9);
+
+    char oyuncu1[10],oyuncu2[10];//oyuncular için 10 karakterlik iki char dizisi atadım
+    printf("oyuncu1 ismini gir: ");
+    scanf("%s",&oyuncu1);
+    printf("oyuncu2 ismini gir: ");
+    scanf("%s",&oyuncu2);
+
+    for(i=1;i<=9;i++)//oyunun her seferinde dönmesi için döngü kullandım
+    {
+    printf(" %c || %c || %c\n",k1,k2,k3);
+    printf(" %c || %c || %c\n",k4,k5,k6);
+    printf(" %c || %c || %c\n",k7,k8,k9);
+
+       if(i%2==1)//Kalan 1 e  esitse oyuncu1 X olarak aktiftir
+        {
+        printf("%s sayi gir: ",oyuncu1);
+        scanf("%d",&kutu);
+        if(kutu==1 && k1=='1'){k1='X';}
+        else if(kutu==2 && k2=='2'){k2='X';}
+        else if(kutu==3 && k3=='3'){k3='X';}
+        else if(kutu==4 && k4=='4'){k4='X';}
+        else if(kutu==5 && k5=='5'){k5='X';}
+        else if(kutu==6 && k6=='6'){k6='X';}
+        else if(kutu==7 && k7=='7'){k7='X';}
+        else if(kutu==8 && k8=='8'){k8='X';}
+        else if(kutu==9 && k9=='9'){k9='X';}
+        else{printf("yeniden deger girin\n");i--;}
+
+        //oyunun nasıl kazanılacağını if içinde belirttim
+       if((k1==k2 && k2==k3)||(k1==k4 && k4==k7)||(k2==k5 && k5==k8)||(k3==k6 && k6==k9)||(k4==k5 && k5==k6)||(k7==k8 && k8==k9)||(k1==k5 && k5==k9)||(k3==k5 && k5==k7))
+        {printf("%s KAZANDİNİZ\n",oyuncu1);break;}
+    }
+
+      else if(i%2==0)//Kalan 0 a esitse oyuncu2 o olarak aktiftir
+        {
+            printf("%s sayi gir: ",oyuncu2);
+            scanf("%d",&kutu);
+            if(kutu==1 && k1=='1'){k1='O';}
+            else if(kutu==2 && k2=='2'){k2='O';}
+            else if(kutu==3 && k3=='3'){k3='O';}
+            else if(kutu==4 && k4=='4'){k4='O';}
+            else if(kutu==5 && k5=='5'){k5='O';}
+            else if(kutu==6 && k6=='6'){k6='O';}
+            else if(kutu==7 && k7=='7'){k7='O';}
+            else if(kutu==8 && k8=='8'){k8='O';}
+            else if(kutu==9 && k9=='9'){k9='O';}
+            else{printf("yeniden deger girin\n");i--;}
+
+
+        if((k1==k2 && k2==k3)||(k1==k4 && k4==k7)||(k2==k5 && k5==k8)||(k3==k6 && k6==k9)||(k4==k5 && k5==k6)||(k7==k8 && k8==k9)||(k1==k5 && k5==k9)||(k3==k5 &&k5==k7))
+        {printf("%s KAZANDİNİZ\n",oyuncu2);break;}
+    }
+    else{printf("gecerli deger gir");//tanımlananlar haricinde bir şey girilirse tekrar değer girilir
+        i--;
+    }
+    }//döngü kapama
+    if((k1==k2 && k2==k3)||(k1==k4 && k4==k7)||(k2==k5 && k5==k8)||(k3==k6 && k6==k9)||(k4==k5 && k5==k6)||(k7==k8 && k8==k9)||(k1==k5 && k5==k9)||(k3==k5 &&k5==k7))
+        {printf("%s OYUN BİTTİ\n");}
+
+       else{
+            printf("oyun yeniden baslar\n");
+
+        for(b=1;b<=9;b++)
+    {
+    printf(" %c || %c || %c\n",a1,a2,a3);
+    printf(" %c || %c || %c\n",a4,a5,a6);
+    printf(" %c || %c || %c\n",a7,a8,a9);
+
+       if(b%2==1){
+        printf("%s sayi gir: ",oyuncu2);
+        scanf("%d",&kutu);
+        if(kutu==1 && a1=='1'){a1='X';}
+        else if(kutu==2 && a2=='2'){a2='X';}
+        else if(kutu==3 && a3=='3'){a3='X';}
+        else if(kutu==4 && a4=='4'){a4='X';}
+        else if(kutu==5 && a5=='5'){a5='X';}
+        else if(kutu==6 && a6=='6'){a6='X';}
+        else if(kutu==7 && a7=='7'){a7='X';}
+        else if(kutu==8 && a8=='8'){a8='X';}
+        else if(kutu==9 && a9=='9'){a9='X';}
+        else{printf("yeniden deger girin\n");i--;}
+
+       if((a1==a2 && a2==a3)||(a1==a4 && a4==a7)||(a2==a5 && a5==a8)||(a3==a6 && a6==a9)||(a4==a5 && a5==a6)||(a7==a8 && a8==a9)||(a1==a5 && a5==a9)||(a3==a5 && a5==a7))
+        {printf("%s KAZANDİNİZ\n",oyuncu2);break;}
+       }
+      else if(b%2==0){
+            printf("sayi gir: ",oyuncu1);
+            scanf("%d",&kutu);
+            if(kutu==1 && a1=='1'){a1='O';}
+            else if(kutu==2 && a2=='2'){a2='O';}
+            else if(kutu==3 && a3=='3'){a3='O';}
+            else if(kutu==4 && a4=='4'){a4='O';}
+            else if(kutu==5 && a5=='5'){a5='O';}
+            else if(kutu==6 && a6=='6'){a6='O';}
+            else if(kutu==7 && a7=='7'){a7='O';}
+            else if(kutu==8 && a8=='8'){a8='O';}
+            else if(kutu==9 && a9=='9'){a9='O';}
+            else{printf("yeniden deger girin\n");i--;}
+
+
+        if((a1==a2 && a2==a3)||(a1==a4 && a4==a7)||(a2==a5 && a5==a8)||(a3==a6 && a6==a9)||(a4==a5 && a5==a6)||(a7==a8 && a8==a9)||(a1==a5 && a5==a9)||(a3==a5 && a5==a7))
+        {printf("%s KAZANDİNİZ\n",oyuncu1);break;}
+      }
+    }
+       if((a1==a2 && a2==a3)||(a1==a4 && a4==a7)||(a2==a5 && a5==a8)||(a3==a6 && a6==a9)||(a4==a5 && a5==a6)||(a7==a8 && a8==a9)||(a1==a5 && a5==a9)||(a3==a5 && a5==a7))
+        {printf("%s SON\n");}
+        else{printf("OYUN SONU BERABERE");//berabere kalma durumu
+        }
+       }
+        return 0;
+}
+
+
+
+
